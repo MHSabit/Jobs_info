@@ -5,20 +5,26 @@ import { Column, CreateDateColumn, DeleteDateColumn, Entity, JoinColumn, OneToOn
 export class User {
     @PrimaryGeneratedColumn()
     id: number;
-
-    @Column()
-    userName: string;
+    
+    @Column({
+        unique: true,
+        nullable: false,
+    })
+    email: String;
+    
     
     @Column()
-    email: string;
-    
-    @Column()
-    password: string;
+    password: String;
 
     // @OneToOne(() => Profile)
     // @JoinColumn()
     // Profile?: Profile;
-    
+
+    @Column()
+    phone: String;
+
+
+
     @CreateDateColumn()
     createdAt: Date;
     
