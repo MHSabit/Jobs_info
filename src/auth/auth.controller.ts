@@ -1,9 +1,8 @@
 import { Body, Controller, Get, Post } from '@nestjs/common';
 import { Sign } from 'crypto';
 import { AuthService } from './auth.service';
-import { SignupDto } from './dto/signup.dto';
-import { LoginDto } from './dto/login.dto';
-
+import { LoginDto } from './dtos/logIn.dto';
+import { SignupDto } from './dtos/signUp.dto';
 
 
 @Controller('auth')
@@ -29,5 +28,4 @@ export class AuthController {
     getHello() {
         return 'Hello World';
     }
-
 }
