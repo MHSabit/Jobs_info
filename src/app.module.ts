@@ -5,6 +5,7 @@ import { UserModule } from './user/user.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { User } from './user/user.entity';
 import { AuthModule } from './auth/auth.module';
+import { JobsModule } from './jobs/jobs.module';
 
 @Module({
   imports: [UserModule, TypeOrmModule.forRootAsync(
@@ -23,7 +24,7 @@ import { AuthModule } from './auth/auth.module';
         autoLoadEntities: true,
       }),
     }
-  ), AuthModule],
+  ), AuthModule, JobsModule],
   controllers: [AppController],
   providers: [AppService],
 })
